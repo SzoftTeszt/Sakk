@@ -22,7 +22,9 @@ body{
     width:10vh;
     height: 10vh;
     border:1px solid black;
-    float:left
+    float:left;
+    background-size: cover;
+
 }
 .sor::after {
     content: "";
@@ -35,4 +37,41 @@ body{
 }
 .feher{
     background-color: white;
+}
+.feher_gyalog{
+    background-image: url('./img/fsakk1.png');   
+}
+.feher_bastya{
+    background-image: url('./img/fsakk2.png');   
+}
+.feher_lo{
+    background-image: url('./img/fsakk3.png');   
+}
+.feher_futo{
+    background-image: url('./img/fsakk4.png');   
+}
+.feher_kiralyno{
+    background-image: url('./img/fsakk5.png');   
+}
+.feher_kiraly{
+    background-image: url('./img/fsakk6.png');   
+}
+
+.fekete_gyalog{
+    background-image: url('./img/bsakk1.png');   
+}
+.fekete_bastya{
+    background-image: url('./img/bsakk2.png');   
+}
+.fekete_lo{
+    background-image: url('./img/bsakk3.png');   
+}
+.fekete_futo{
+    background-image: url('./img/bsakk4.png');   
+}
+.fekete_kiralyno{
+    background-image: url('./img/bsakk5.png');   
+}
+.fekete_kiraly{
+    background-image: url('./img/bsakk6.png');   
 }

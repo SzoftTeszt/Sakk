@@ -26,10 +26,18 @@ function tablaletrehozas(){
             if ((i+j)%2) cella.classList.add("fekete")
             else cella.classList.add("feher")
 
+            
             sor.appendChild(cella)       
         } 
         document.getElementById('palya').appendChild(sor)
     }
+    document.getElementById('palya').children[1].childNodes.forEach(
+        (e)=>e.classList.add("fekete_gyalog")
+    )
+    document.getElementById('palya').children[6].childNodes.forEach(
+        (e)=>e.classList.add("feher_gyalog")
+    )
+
     // document.getElementById('palya').style.width="80vh"   
 }
     // palya= document.getElementById('palya')

@@ -23,7 +23,9 @@ body{
     height: 10vh;
     border:1px solid black;
     float:left;
-    background-size: cover;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
 
 }
 .sor::after {
@@ -34,9 +36,11 @@ body{
 
 .fekete{
     background-color: black;
+    border:1vh solid black;
 }
 .feher{
     background-color: white;
+    border:1vh solid white;
 }
 .feher_gyalog{
     background-image: url('./img/fsakk1.png');   
@@ -74,4 +78,8 @@ body{
 }
 .fekete_kiraly{
     background-image: url('./img/bsakk6.png');   
+}
+
+.honnan{
+    border:1vh solid rgba(245, 245, 8, 0.8)
 }

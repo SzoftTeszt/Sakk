@@ -1,4 +1,8 @@
-console.log("Szia")
+const state={
+    honnan:null,
+    hova:null
+}
+
 document.getElementById("letrehoz").onclick=tablaletrehozas
 
 function tablaletrehozas(){
@@ -26,6 +30,7 @@ function tablaletrehozas(){
             if ((i+j)%2) cella.classList.add("fekete")
             else cella.classList.add("feher")
 
+            cella.onclick=lep
             
             sor.appendChild(cella)       
         } 
@@ -37,7 +42,8 @@ function tablaletrehozas(){
     document.getElementById('palya').children[6].childNodes.forEach(
         (e)=>e.classList.add("feher_gyalog")
     )
-
+    tisztekKirak("feher")
+    tisztekKirak("fekete")
     // document.getElementById('palya').style.width="80vh"   
 }
     // palya= document.getElementById('palya')
@@ -47,6 +53,50 @@ function tablaletrehozas(){
 
 
 // document.getElementById("letrehoz").addEventListener("click", letrehoz2)
+
+function tisztekKirak(szin){
+    let tiszt=["bastya", "lo", "futo", "kiralyno", "kiraly","futo", "lo","bastya"]
+    let sor=0
+    if (szin!="fekete") sor=7
+    let elemek = document.getElementById('palya').children[sor]
+
+    for (let i = 0; i < 8; i++) {
+        elemek.children[i].classList.add(szin+"_"+tiszt[i])        
+    }
+
+}
+function babuVissza(cella){
+    let t=cella.className.split(' ')
+    t=t.filter(
+        function(e){
+            return e.includes('_')
+        }
+    )    
+    if (t.length>0) return t[0]
+    else return null
+}
+
+function lep(){
+    console.log(state)
+    if (!state.honnan) {
+        if (babuVissza(this))
+        {
+            this.classList.add("honnan")
+            state.honnan=this
+        }    
+    }
+    else
+    {
+        if (!babuVissza(this))
+        {
+            banu=babuVissza(state.honnan)
+            state.honnan.classList.remove(banu)
+            state.honnan.classList.remove("honnan")
+            this.classList.add(banu)
+            state.honnan=null
+        }
+    }
+}
 
 function letrehoz(){
     console.log("cica1")
